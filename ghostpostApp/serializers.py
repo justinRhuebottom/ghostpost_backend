@@ -21,5 +21,6 @@ class GhostpostSerializer(serializers.ModelSerializer):
             'upvotes',
             'downvotes',
             'vote_score',
-            'creation_date'
+            'creation_date',
+            'updated'
             ]

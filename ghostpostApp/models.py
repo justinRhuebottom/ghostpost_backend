@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-
 class ghostpost(models.Model):
     
     BOAST = 'B'
@@ -13,7 +12,11 @@ class ghostpost(models.Model):
         max_length=280, verbose_name='Content')
     upvotes = models.IntegerField(default=0)
     downvotes = models.IntegerField(default=0)
-    creation_date = models.DateTimeField(default=timezone.now, editable=False)
+    # creation_date = models.DateTimeField(default=timezone.now, editable=False)
+    # updated_date = models.DateTimeField(default=timezone.now, editable=False)
+
+    creation_date = models.DateTimeField(auto_now_add=True, editable=False)
+    updated = models.DateTimeField(auto_now=True, editable=False)
 
     def __str__(self):
         return self.ghostpost_content
